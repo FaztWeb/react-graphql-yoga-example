@@ -1,8 +1,7 @@
-import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
-const GET_MESSAGES = gql`
+export const GET_MESSAGES = gql`
   {
     messages {
       _id
@@ -12,10 +11,12 @@ const GET_MESSAGES = gql`
     }
   }
 `;
-export default function MessageList() {
 
+export default function MessageList() {
   const { loading, error, data } = useQuery(GET_MESSAGES);
+
   if (loading) return <p>Loading Messages...</p>;
+
   if (error) {
     return <p>Error</p>;
   }

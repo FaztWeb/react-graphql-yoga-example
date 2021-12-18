@@ -1,7 +1,6 @@
-import React from "react";
 import MessageForm from "./components/MessageForm";
 import MessageList from "./components/MessageList";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Navigation } from "./components/Navbar";
 
@@ -12,10 +11,10 @@ function App() {
     <Router>
       <Navigation />
       <div className="container p-4">
-        <Switch>
-          <Route exact path="/" component={MessageList} />
-          <Route exact path="/new-message" component={MessageForm} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<MessageList />} />
+          <Route exact path="/new-message" element={<MessageForm />} />
+        </Routes>
       </div>
     </Router>
   );

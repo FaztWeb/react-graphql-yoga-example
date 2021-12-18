@@ -4,11 +4,7 @@ type Query {
 }
 
 type Mutation {
-  createMessage(
-    title: String!,
-    content: String!,
-    author: String!
-  ): Message
+  createMessage(title: String!, content: String!, author: String!): Message
 }
 
 type Message {

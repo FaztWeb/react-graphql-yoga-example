@@ -4,5 +4,5 @@ import path from "path";
 
 export const server = new GraphQLServer({
   typeDefs: path.join(__dirname, "graphql/schema.graphql"),
-  resolvers
+  resolvers,
 });
